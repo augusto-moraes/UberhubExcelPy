@@ -152,7 +152,81 @@ m3_avancado_manha_pit = avancado_manha_pit[avancado_manha_pit[age].isin([17, 'Ma
 m3_avancado_manha_ufu = avancado_manha_ufu[avancado_manha_ufu[age].isin([17, 'Mais de 18'])]
 m3_avancado_manha_uni = avancado_manha_uni[avancado_manha_uni[age].isin([17, 'Mais de 18'])]
 
-#print(ufu[name])
+
+#sort_values
+m1_iniciante1_tarde_pit.sort_values(name)
+m1_iniciante1_tarde_ufu.sort_values(name)
+m1_iniciante1_tarde_uni.sort_values(name)
+m1_iniciante2_tarde_pit.sort_values(name)
+m1_iniciante2_tarde_ufu.sort_values(name)
+m1_iniciante2_tarde_uni.sort_values(name)
+m1_intermediario_tarde_pit.sort_values(name)
+m1_intermediario_tarde_ufu.sort_values(name)
+m1_intermediario_tarde_uni.sort_values(name)
+m1_avancado_tarde_pit.sort_values(name)
+m1_avancado_tarde_ufu.sort_values(name)
+m1_avancado_tarde_uni.sort_values(name)
+m1_iniciante1_manha_pit.sort_values(name)
+m1_iniciante1_manha_ufu.sort_values(name)
+m1_iniciante1_manha_uni.sort_values(name)
+m1_iniciante2_manha_pit.sort_values(name)
+m1_iniciante2_manha_ufu.sort_values(name)
+m1_iniciante2_manha_uni.sort_values(name)
+m1_intermediario_manha_pit.sort_values(name)
+m1_intermediario_manha_ufu.sort_values(name)
+m1_intermediario_manha_uni.sort_values(name)
+m1_avancado_manha_pit.sort_values(name)
+m1_avancado_manha_ufu.sort_values(name)
+m1_avancado_manha_uni.sort_values(name)
+m2_iniciante1_tarde_pit.sort_values(name)
+m2_iniciante1_tarde_ufu.sort_values(name)
+m2_iniciante1_tarde_uni.sort_values(name)
+m2_iniciante2_tarde_pit.sort_values(name)
+m2_iniciante2_tarde_ufu.sort_values(name)
+m2_iniciante2_tarde_uni.sort_values(name)
+m2_intermediario_tarde_pit.sort_values(name)
+m2_intermediario_tarde_ufu.sort_values(name)
+m2_intermediario_tarde_uni.sort_values(name)
+m2_avancado_tarde_pit.sort_values(name)
+m2_avancado_tarde_ufu.sort_values(name)
+m2_avancado_tarde_uni.sort_values(name)
+m2_iniciante1_manha_pit.sort_values(name)
+m2_iniciante1_manha_ufu.sort_values(name)
+m2_iniciante1_manha_uni.sort_values(name)
+m2_iniciante2_manha_pit.sort_values(name)
+m2_iniciante2_manha_ufu.sort_values(name)
+m2_iniciante2_manha_uni.sort_values(name)
+m2_intermediario_manha_pit.sort_values(name)
+m2_intermediario_manha_ufu.sort_values(name)
+m2_intermediario_manha_uni.sort_values(name)
+m2_avancado_manha_pit.sort_values(name)
+m2_avancado_manha_ufu.sort_values(name)
+m2_avancado_manha_uni.sort_values(name)
+m3_iniciante1_tarde_pit.sort_values(name)
+m3_iniciante1_tarde_ufu.sort_values(name)
+m3_iniciante1_tarde_uni.sort_values(name)
+m3_iniciante2_tarde_pit.sort_values(name)
+m3_iniciante2_tarde_ufu.sort_values(name)
+m3_iniciante2_tarde_uni.sort_values(name)
+m3_intermediario_tarde_pit.sort_values(name)
+m3_intermediario_tarde_ufu.sort_values(name)
+m3_intermediario_tarde_uni.sort_values(name)
+m3_avancado_tarde_pit.sort_values(name)
+m3_avancado_tarde_ufu.sort_values(name)
+m3_avancado_tarde_uni.sort_values(name)
+m3_iniciante1_manha_pit.sort_values(name)
+m3_iniciante1_manha_ufu.sort_values(name)
+m3_iniciante1_manha_uni.sort_values(name)
+m3_iniciante2_manha_pit.sort_values(name)
+m3_iniciante2_manha_ufu.sort_values(name)
+m3_iniciante2_manha_uni.sort_values(name)
+m3_intermediario_manha_pit.sort_values(name)
+m3_intermediario_manha_ufu.sort_values(name)
+m3_intermediario_manha_uni.sort_values(name)
+m3_avancado_manha_pit.sort_values(name)
+m3_avancado_manha_ufu.sort_values(name)
+m3_avancado_manha_uni.sort_values(name)
+
 
 #Creates the new excel file
 writer = pd.ExcelWriter("out/" + file_b + ".xls", engine='xlsxwriter')
@@ -230,78 +304,6 @@ m3_avancado_manha_pit[name].to_excel(writer, sheet_name='Pitagoras manha avan >1
 m3_avancado_manha_ufu[name].to_excel(writer, sheet_name='UFU manha avan >18')
 m3_avancado_manha_uni[name].to_excel(writer, sheet_name='Uniube manha avan >18')
 
-
-#sorted_by_name = df1.sort_values(['Nome'], ascending=False)
-#df = pd.DataFrame({'Data': [10, 20, 30, 20, 15, 30, 45]})
-#df.to_excel(writer, sheet_name='Sheet1')
 writer.save()
 
-"""
-sheet = book.sheet_by_index(0)
-
-workbook = xlsxwriter.Workbook("out/" + file_b + ".xls")
-
-n=0
-worksheet = new_worksheet()
-
-i=2
-for r in range(1, sheet.nrows):
-    if sheet.cell(r,5).value == "Menos de 13":
-        worksheet.cell(1,i).value = sheet.cell(r,2).value
-        i=i+1
-        if i>=30:
-            n=n+1
-            worksheet = new_worksheet()
-            i=2
-
-def new_worksheet():
-    worksheet = workbook.add_worksheet()
-    worksheet.write('A1', 'Professor:')
-    worksheet.write('A2', 'Sala:')
-    worksheet.write('A3', 'Horario:')
-    worksheet.write('A4', 'Instituição:')
-    worksheet.write('B1', 'Alunos')
-    worksheet.write('B2', 'Aula 1')
-    worksheet.write('B3', 'Aula 2')
-    worksheet.write('B4', 'Aula 3')
-    worksheet.write('B5', 'Aula 4')
-    worksheet.write('B6', 'Aula 5')
-    worksheet.write('B7', 'Aula 6')
-    worksheet.write('B8', 'Aula 7')
-    worksheet.write('B9', 'Aula 8')
-    worksheet.write('B10', 'Aula 9')
-    worksheet.write('B11', 'Aula 10')
-    for r in df1:
-        if df1[r, [age]] == "Menos de 13":
-            print(r)
-
-pitagoras = df1[df1[local] == 'PITÁGORAS']
-ufu       = df1[df1[local] == 'UFU']
-uniube    = df1[df1[local] == 'UNIUBE']
-
-
-
-menos_de_13 = df1[df1[age] == "Menos de 13"]
-menores_de_13.to_excel(writer, sheet_name='Menores de 13')
-
-writer = pd.ExcelWriter("out/" + file_b + ".xls", engine='xlsxwriter')
-
-pitagoras[name].to_excel(writer, sheet_name='Pitagoras')
-ufu[name].to_excel(writer, sheet_name='UFU')
-uniube[name].to_excel(writer, sheet_name='Uniube')
-
-tarde[name].to_excel(writer, sheet_name='Tarde')
-manha[name].to_excel(writer, sheet_name='Manha')
-
-iniciante_1[name].to_excel(writer, sheet_name='iniciante_1')
-iniciante_2[name].to_excel(writer, sheet_name='iniciante_2')
-intermediario[name].to_excel(writer, sheet_name='intermediario')
-avancado[name].to_excel(writer, sheet_name='avançado')
-
-m_13[name].to_excel(writer, sheet_name='Menos de 13 anos')
-m_14[name].to_excel(writer, sheet_name='14 anos')
-m_15[name].to_excel(writer, sheet_name='15 anos')
-m_16[name].to_excel(writer, sheet_name='16 anos')
-m_17[name].to_excel(writer, sheet_name='17 anos')
-m_18[name].to_excel(writer, sheet_name='Mais de 18 anos')
-"""
+print("Sucesso!! Arquivo direcionado para [out]")
